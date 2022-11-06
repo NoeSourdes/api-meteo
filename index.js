@@ -24,7 +24,7 @@ if(unitDegFar === "°F"){
     unit = "f"
 }
 const weather = (location, unit, callback) => {
-    const url = `http://api.weatherstack.com/current?access_key=b804d327facaacf4b439b53e2e2641e3&query=${location}&units=${unit}`
+    const url = `http://api.weatherstack.com/current?access_key=b804d327facaacf4b439b53e2e2641e3&query=${encodeURIComponent(location)}&units=${unit}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
